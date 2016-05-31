@@ -1,3 +1,5 @@
+src/main/resources/public/bower_components/
+
 *.class
 *.log
 

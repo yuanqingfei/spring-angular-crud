@@ -1,0 +1,30 @@
+<section class="mainbar" data-ng-init="vm.toViewTransfer()">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+			Transfer View
+    </div>
+    <div class="panel-body">
+
+      <form novalidate>
+        <formly-form model="vm.transfer" fields="vm.formFields">
+        </formly-form>
+      </form>
+
+      <hr/>
+      <div>
+        <a class="btn btn-success" href="/transfer/{{vm.transfer.id}}/edit">
+          <i class="glyphicon glyphicon-edit"></i> Edit
+        </a>
+        <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove()" item="vm.transfer">
+          <i class="glyphicon glyphicon-remove-circle"></i> Delete
+        </a>
+        <a class="btn btn-primary" href="/transfer">
+          <i class="glyphicon glyphicon-list"></i> List Transfers
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>

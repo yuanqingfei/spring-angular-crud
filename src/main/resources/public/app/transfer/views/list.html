@@ -1,0 +1,40 @@
+<section class="mainbar">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Transfer List
+    </div>
+    <div class="panel-body">
+
+      <div class="pull-right">
+        <a type="button" class="btn btn-success" href="/transfer/create">
+          <i class="glyphicon glyphicon-open"></i> New Transfer
+        </a>
+      </div>
+
+      <table ng-table="vm.tableParams" show-filter="true" class="table table-condensed table-striped">
+          <tr ng-repeat="transfer in $data">
+              <td data-title="'Id'" sortable="'id'" filter="{ 'id': 'text' }">{{transfer.id}}</td>
+              <td data-title="'医生姓名'" sortable="'doctor'" filter="{'doctor': 'text'}">{{transfer.doctor}}</td>
+              <td data-title="'运送者姓名'" sortable="'sender'" filter="{'sender': 'text'}">{{transfer.sender}}</td>
+              <td data-title="'接收者姓名'" sortable="'receiver'" filter="{'receiver': 'text'}">{{transfer.receiver}}</td>
+              <td>
+                 <div class="table-actions">
+                      <a class="btn btn-default" title="View" href="/transfer/{{transfer.id}}">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                      </a>
+                      <a class="btn btn-default" title="Edit" href="/transfer/{{transfer.id}}/edit">
+                        <span class="glyphicon glyphicon-edit"></span>
+                      </a>
+                      <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove(transfer)" item="transfer">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                      </a>
+                  </div>
+              </td>
+          </tr>
+      </table>
+
+    </div>
+  </div>
+
+</section>
